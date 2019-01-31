@@ -8,6 +8,8 @@
 
 ## TODOs
 
-- [ ] Setup fixes for PWA Helper
-- [ ] Add boilerplate for all pages.
+- [x] Setup fixes for PWA Helper
+- [x] Add boilerplate for all pages.
+- [ ] Remove irrelevant pages.
+- [ ] Remove irrelevant Redux.
 - [ ] Add description of app

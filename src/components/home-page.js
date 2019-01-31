@@ -14,7 +14,7 @@ import { PageViewElement } from './page-view-element.js';
 // These are the shared styles needed by this element.
 import { SharedStyles } from './shared-styles.js';
 
-class MyView1 extends PageViewElement {
+class HomePage extends PageViewElement {
   static get styles() {
     return [
       SharedStyles
@@ -24,7 +24,7 @@ class MyView1 extends PageViewElement {
   render() {
     return html`
       <section>
-        <h2>Static page</h2>
+        <h2>Home Page</h2>
         <p>This is a text-only page.</p>
         <p>It doesn't do anything other than display some static text.</p>
       </section>
@@ -39,4 +39,4 @@ class MyView1 extends PageViewElement {
   }
 }
 
-window.customElements.define('my-view1', MyView1);
+window.customElements.define('home-page', HomePage);

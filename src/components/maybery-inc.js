@@ -28,9 +28,13 @@ import {
 
 // These are the elements needed by this element.
 import '@polymer/app-layout/app-drawer-layout/app-drawer-layout.js';
+import '@polymer/app-layout/app-header-layout/app-header-layout.js';
+import '@polymer/app-layout/app-scroll-effects/effects/waterfall.js';
+import '@polymer/app-layout/app-scroll-effects/effects/parallax-background.js';
+import '@polymer/app-layout/app-scroll-effects/effects/blend-background.js';
+import '@polymer/app-layout/app-scroll-effects/effects/resize-title.js';
 import '@polymer/app-layout/app-drawer/app-drawer.js';
 import '@polymer/app-layout/app-header/app-header.js';
-import '@polymer/app-layout/app-scroll-effects/effects/waterfall.js';
 import '@polymer/app-layout/app-toolbar/app-toolbar.js';
 import { menuIcon } from './my-icons.js';
 import './snack-bar.js';
@@ -54,8 +58,8 @@ class MayberyInc extends connect(store)(LitElement) {
 
           --app-drawer-width: 256px;
 
-          --app-primary-color: #E91E63;
-          --app-secondary-color: #293237;
+          --app-primary-color: #283593;
+          --app-secondary-color: #000099;
           --app-dark-text-color: var(--app-secondary-color);
           --app-light-text-color: white;
           --app-section-even-color: #f7f7f7;
@@ -76,7 +80,6 @@ class MayberyInc extends connect(store)(LitElement) {
           left: 0;
           width: 100%;
           text-align: center;
-          background-color: var(--app-header-background-color);
           color: var(--app-header-text-color);
           border-bottom: 1px solid #eee;
         }
@@ -86,9 +89,9 @@ class MayberyInc extends connect(store)(LitElement) {
         }
 
         [main-title] {
-          font-family: 'Pacifico';
-          text-transform: lowercase;
+          font-family: 'Muli' sans-serif;
           font-size: 30px;
+          font-weight: 900;
           /* In the narrow layout, the toolbar is offset by the width of the
           drawer button, and the text looks not centered. Add a padding to
           match that button */
@@ -191,6 +194,12 @@ class MayberyInc extends connect(store)(LitElement) {
         app-drawer-layout {
           z-index: 5 !important;
         }
+        app-header {
+          --app-header-background-front-layer: {
+            background-image: url(https://app-layout-assets.appspot.com/assets/test-drive.jpg);
+            background-position: 50% 10%;
+          };
+        }
       `
     ];
   }
@@ -199,21 +208,27 @@ class MayberyInc extends connect(store)(LitElement) {
     // Anything that's related to rendering should be done in here.
     return html`
       <!-- Header -->
-      <app-header condenses reveals effects="waterfall">
-        <app-toolbar class="toolbar-top">
-          <button class="menu-btn" title="Menu" @click="${this._menuButtonClicked}">${menuIcon}</button>
-          <div main-title>${this.appTitle}</div>
-        </app-toolbar>
+      <app-header-layout>
+        <app-header condenses fixed effects="blend-background parallax-background resize-title waterfall">
+          <app-toolbar class="toolbar-top">
+            <button class="menu-btn" title="Menu" @click="${this._menuButtonClicked}">${menuIcon}</button>
+            <div condensed-title style="text-align: left !important;">${this.appTitle}</div>
+          </app-toolbar>
 
-        <!-- This gets hidden on a small screen-->
-        <nav class="toolbar-list">
-          <a ?selected="${this._page === 'home-page'}" href="/home-page">Home Page</a>
-          <a ?selected="${this._page === 'about-us'}" href="/about-us">About Us</a>
-          <a ?selected="${this._page === 'articles-page'}" href="/articles-page">Articles Page</a>
-          <a ?selected="${this._page === 'careers-page'}" href="/careers-page">Careers</a>
-          <a ?selected="${this._page === 'contact-us'}" href="/contact-us">Contact Us</a>
-        </nav>
-      </app-header>
+          <app-toolbar>
+            <div  main-title>${this.appTitle}</div>
+          </app-toolbar>
+
+          <!-- This gets hidden on a small screen-->
+          <nav class="toolbar-list">
+            <a ?selected="${this._page === 'home-page'}" href="/home-page">Home Page</a>
+            <a ?selected="${this._page === 'about-us'}" href="/about-us">About Us</a>
+            <a ?selected="${this._page === 'articles-page'}" href="/articles-page">Articles Page</a>
+            <a ?selected="${this._page === 'careers-page'}" href="/careers-page">Careers</a>
+            <a ?selected="${this._page === 'contact-us'}" href="/contact-us">Contact Us</a>
+          </nav>
+        </app-header>
+      </app-header-layout>
 
       <!-- Drawer content -->
       <app-drawer-layout>
@@ -234,7 +249,7 @@ class MayberyInc extends connect(store)(LitElement) {
       </app-drawer-layout>
 
       <!-- Main content -->
-      <main role="main" class="main-content">
+      <main role="main" class="main-content" style="margin-top:16px;">
         <home-page class="page" ?active="${this._page === 'home-page'}"></home-page>
         <about-us class="page" ?active="${this._page === 'about-us'}"></about-us>
         <articles-page class="page" ?active="${this._page === 'articles-page'}"></articles-page>

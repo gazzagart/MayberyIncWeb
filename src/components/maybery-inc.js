@@ -23,7 +23,7 @@ import { store } from '../store.js';
 import {
   navigate,
   updateOffline,
-  updateDrawerState
+  updateDrawerState,
 } from '../actions/app.js';
 
 // These are the elements needed by this element.
@@ -46,7 +46,8 @@ class MayberyInc extends connect(store)(LitElement) {
       _page: { type: String },
       _drawerOpened: { type: Boolean },
       _snackbarOpened: { type: Boolean },
-      _offline: { type: Boolean }
+      _offline: { type: Boolean },
+      _updateFirstLoad: { type: Boolean },
     };
   }
 
@@ -151,6 +152,8 @@ class MayberyInc extends connect(store)(LitElement) {
         }
 
         .main-content {
+          font-family: 'Muli' sans-serif;
+          font-weight: 400;
           padding-top: 64px;
           min-height: 100vh;
         }
@@ -212,7 +215,9 @@ class MayberyInc extends connect(store)(LitElement) {
         <app-header condenses fixed effects="blend-background parallax-background resize-title waterfall">
           <app-toolbar class="toolbar-top">
             <button class="menu-btn" title="Menu" @click="${this._menuButtonClicked}">${menuIcon}</button>
-            <div condensed-title style="text-align: left !important;">${this.appTitle}</div>
+            <div style="display:${this._updateFirstLoad ? 'block' : 'none'}">
+              <div condensed-title style="text-align: left !important;">${this.appTitle}</div>
+            </div>
           </app-toolbar>
 
           <app-toolbar>
@@ -306,6 +311,11 @@ class MayberyInc extends connect(store)(LitElement) {
     this._offline = state.app.offline;
     this._snackbarOpened = state.app.snackbarOpened;
     this._drawerOpened = state.app.drawerOpened;
+    this._updateFirstLoad = state.app.firstLoad;
+    console.log(this._updateFirstLoad);
+    if (this._updateFirstLoad){
+      console.log("yes");
+    }
   }
 }
 

@@ -13,5 +13,7 @@
 - [x] Remove irrelevant pages.
 - [x] Remove irrelevant Redux.
 - [ ] Add description of app.
+- [ ] Add Firebase to app.
+- [ ] Add ability to add articles.
 ## Issues
-- [ ] Fix condensed-title load.
+- [x] Fix condensed-title load.

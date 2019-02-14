@@ -60,8 +60,23 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     <meta name="twitter:card" content="summary">
     <meta name="twitter:site" content="@username">
     <meta property="og:type" content="website">
-    <meta property="og:site_name" content="my-app">
+    <meta property="og:site_name" content="maybery-inc">
     <meta property="og:image" content="images/manifest/icon-144x144.png" />
+
+    <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-firestore.js"></script>
+    <script>
+        // Initialize Firebase
+        var config = {
+          apiKey: "AIzaSyD_SOj_YF02G_NLXwQvLxaArdGawCq-Kgw",
+          authDomain: "mayberyinc.firebaseapp.com",
+          databaseURL: "https://mayberyinc.firebaseio.com",
+          projectId: "mayberyinc",
+          storageBucket: "mayberyinc.appspot.com",
+          messagingSenderId: "1002831742206"
+        };
+        firebase.initializeApp(config);
+    </script>
 
     <!-- Performance tip: hint to the browser to start the handshake for the fonts site -->
     <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
@@ -162,6 +177,9 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     </noscript>
     <!-- Load webcomponents-loader.js to check and load any polyfills your browser needs -->
     <script src="node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js"></script>
+    <!-- Include the polyfill -->
+    <script src="node_modules/web-animations-js/web-animations-next.min.js"></script>
+
     <!-- Built with love using PWA Starter Kit -->
     <script type="module" src="src/components/maybery-inc.js"></script>
   </body>

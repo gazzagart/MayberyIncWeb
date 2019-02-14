@@ -1,64 +1,120 @@
 {
   "/": {
-    "src/components/my-app.js": {
+    "src/components/maybery-inc.js": {
       "crossorigin": "anonymous",
       "type": "script",
       "weight": 1
     },
-    "src/components/my-view1.js": {
+    "src/components/home-page.js": {
       "crossorigin": "anonymous",
       "type": "script",
       "weight": 1
     },
     "node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "node_modules/web-animations-js/web-animations-next.min.js": {
       "type": "script",
       "weight": 1
     }
   },
-  "/view1": {
-    "src/components/my-app.js": {
+  "/home-page": {
+    "src/components/maybery-inc.js": {
       "crossorigin": "anonymous",
       "type": "script",
       "weight": 1
     },
-    "src/components/my-view1.js": {
+    "src/components/home-page.js": {
       "crossorigin": "anonymous",
       "type": "script",
       "weight": 1
     },
     "node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "node_modules/web-animations-js/web-animations-next.min.js": {
       "type": "script",
       "weight": 1
     }
   },
-  "/view2": {
-    "src/components/my-app.js": {
+  "/about-us": {
+    "src/components/maybery-inc.js": {
       "crossorigin": "anonymous",
       "type": "script",
       "weight": 1
     },
-    "src/components/my-view2.js": {
+    "src/components/about-us.js": {
       "crossorigin": "anonymous",
       "type": "script",
       "weight": 1
     },
     "node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "node_modules/web-animations-js/web-animations-next.min.js": {
       "type": "script",
       "weight": 1
     }
   },
-  "/view3": {
-    "src/components/my-app.js": {
+  "/articles-page": {
+    "src/components/maybery-inc.js": {
       "crossorigin": "anonymous",
       "type": "script",
       "weight": 1
     },
-    "src/components/my-view3.js": {
+    "src/components/articles-page.js": {
       "crossorigin": "anonymous",
       "type": "script",
       "weight": 1
     },
     "node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "node_modules/web-animations-js/web-animations-next.min.js": {
+      "type": "script",
+      "weight": 1
+    }
+  },
+  "/careers-page": {
+    "src/components/maybery-inc.js": {
+      "crossorigin": "anonymous",
+      "type": "script",
+      "weight": 1
+    },
+    "src/components/careers-page": {
+      "crossorigin": "anonymous",
+      "type": "script",
+      "weight": 1
+    },
+    "node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "node_modules/web-animations-js/web-animations-next.min.js": {
+      "type": "script",
+      "weight": 1
+    }
+  },
+  "/contact-us": {
+    "src/components/maybery-inc.js": {
+      "crossorigin": "anonymous",
+      "type": "script",
+      "weight": 1
+    },
+    "src/components/contact-us.js": {
+      "crossorigin": "anonymous",
+      "type": "script",
+      "weight": 1
+    },
+    "node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "node_modules/web-animations-js/web-animations-next.min.js": {
       "type": "script",
       "weight": 1
     }

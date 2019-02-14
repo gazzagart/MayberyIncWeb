@@ -8,26 +8,40 @@ Code distributed by Google as part of the polymer project is also
 subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
 */
 
-import { LitElement, html, css } from 'lit-element';
+import { LitElement, html } from 'lit-element';
 
 class SnackBar extends LitElement {
   static get properties() {
     return {
-      active: { type: Boolean }
+      active: { type: Boolean },
+      colour: {type: String}
     };
   }
 
-  static get styles() {
-    return [
-      css`
-        :host {
+  constructor () {
+    super();
+    this.colour = "#b3b3b3";
+  }
+
+  // static get styles() {
+  //   return [
+  //     css`
+  //     `
+  //   ];
+  // }
+
+  render() {
+    return html`
+    <style>
+      :host {
           display: block;
           position: fixed;
+          z-index:103;
           top: 100%;
           left: 0;
           right: 0;
           padding: 12px;
-          background-color: var(--app-secondary-color);
+          background-color: ${this.colour};
           color: white;
           box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
           text-align: center;
@@ -49,12 +63,7 @@ class SnackBar extends LitElement {
             margin: auto;
           }
         }
-      `
-    ];
-  }
-
-  render() {
-    return html`
+    </style>
       <slot></slot>
     `;
   }

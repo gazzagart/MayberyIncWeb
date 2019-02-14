@@ -73,6 +73,10 @@ class MayberyInc extends connect(store)(LitElement) {
           --app-drawer-background-color: var(--app-secondary-color);
           --app-drawer-text-color: var(--app-light-text-color);
           --app-drawer-selected-color: #78909C;
+          --app-header-background-front-layer: {
+            background-image: url(https://app-layout-assets.appspot.com/assets/test-drive.jpg);
+            background-position: 50% 10%;
+          };
         }
 
         app-header {
@@ -197,11 +201,8 @@ class MayberyInc extends connect(store)(LitElement) {
         app-drawer-layout {
           z-index: 5 !important;
         }
-        app-header {
-          --app-header-background-front-layer: {
-            background-image: url(https://app-layout-assets.appspot.com/assets/test-drive.jpg);
-            background-position: 50% 10%;
-          };
+        app-header-layout {
+          z-index: 2 !important;
         }
       `
     ];
@@ -211,7 +212,7 @@ class MayberyInc extends connect(store)(LitElement) {
     // Anything that's related to rendering should be done in here.
     return html`
       <!-- Header -->
-      <app-header-layout>
+      <app-header-layout class="w3-top">
         <app-header condenses fixed effects="blend-background parallax-background resize-title waterfall">
           <app-toolbar class="toolbar-top">
             <button class="menu-btn" title="Menu" @click="${this._menuButtonClicked}">${menuIcon}</button>
@@ -312,10 +313,6 @@ class MayberyInc extends connect(store)(LitElement) {
     this._snackbarOpened = state.app.snackbarOpened;
     this._drawerOpened = state.app.drawerOpened;
     this._updateFirstLoad = state.app.firstLoad;
-    console.log(this._updateFirstLoad);
-    if (this._updateFirstLoad){
-      console.log("yes");
-    }
   }
 }
 

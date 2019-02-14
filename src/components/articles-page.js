@@ -29,6 +29,10 @@ class ArticlesPage extends PageViewElement {
       </section>
     `;
   }
+
+  firstUpdated() {
+    // This is where we must go and fetch articles and display them
+  }
 }
 
 window.customElements.define('articles-page', ArticlesPage);

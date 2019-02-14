@@ -1,5 +1,7 @@
 build/
 node_modules/
+assests/
+fonts/
 test/integration/screenshots-current/
 _site/
 .DS_Store

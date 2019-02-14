@@ -31,7 +31,7 @@ class MessageEmail extends connect(store)(LitElement) {
     }
 
     render(){
-        if(this.message == "undefined") // Have to check a string here not type, this is because, it passes a string to a child which is hten converted.
+        if(this.message == "undefined") // Have to check a string here not type, this is because, it passes a string to a child which is then converted.
             this.setAttribute("message", "");
 
         return html`

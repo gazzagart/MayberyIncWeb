@@ -28,7 +28,7 @@ class ContactUs extends PageViewElement {
     return html`
       <section>
         <h2>Contact us</h2>
-        <p>Here you can contact us.</p>
+        <p class="w3-center">Here you can contact us.</p>
         <br><br>
         <message-email message=${this.message} ></message-email>
       </section>

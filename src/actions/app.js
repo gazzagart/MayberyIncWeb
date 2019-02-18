@@ -47,6 +47,9 @@ const loadPage = (page) => (dispatch) => {
     case 'contact-us':
       import('../components/contact-us.js');
       break;
+      case 'log-in':
+      import('../components/log-in.js');
+      break;
     default:
       page = 'view404';
       import('../components/my-view404.js');

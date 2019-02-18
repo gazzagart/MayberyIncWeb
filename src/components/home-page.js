@@ -84,7 +84,6 @@ class HomePage extends connect(store)(PageViewElement) {
     this.snackMessage = "Hello There."
   }
 
-
   render() {
     return html`
     <!-- Header with full-height image -->
@@ -123,14 +122,14 @@ class HomePage extends connect(store)(PageViewElement) {
       <section class="hidden">
         <p>Vestibulum at est ex. Aenean id ligula id nibh dictum laoreet. Etiam non semper erat. Pellentesque eu justo rhoncus diam vulputate facilisis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam feugiat metus ex, vel fringilla massa tincidunt sit amet. Nunc facilisis bibendum tristique. Mauris commodo, dolor vitae dapibus fermentum, odio nibh viverra lorem, eu cursus diam turpis et sapien. Nunc suscipit tortor a ligula tincidunt, id hendrerit tellus sollicitudin.</p>
       </section>
-      <p>
-        <a href="/about-us" class="w3-button w3-white w3-padding-large w3-large w3-margin-top w3-opacity w3-hover-opacity-off" @click="${this.scrollTop}">
-          About Us
+      <section class="w3-center">
+        <a href="/about-us" class="w3-margin-top" style="text-decoration:none;" @click="${this.scrollTop}">
+          <paper-button class="w3-purple" raised>About Us</paper-button>
         </a>
-      </p>
+      </section>
 
       <!--START OF DIALOG QUESTIONS-->
-      <paper-dialog id="questions" modal entry-animation="scale-up-animation" exit-animation="fade-out-animation">
+      <paper-dialog id="questions" modal entry-animation="scale-up-animation" exit-animation="fade-out-animation" style="border-radius: 16px;">
         <h2>
           <div class="w3-border-bottom" style="padding-bottom: 12px;">
             Maybery INC Helper

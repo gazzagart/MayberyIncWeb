@@ -261,6 +261,7 @@ class MayberyInc extends connect(store)(LitElement) {
         <articles-page class="page" ?active="${this._page === 'articles-page'}"></articles-page>
         <careers-page class="page" ?active="${this._page === 'careers-page'}"></careers-page>
         <contact-us class="page" ?active="${this._page === 'contact-us'}"></contact-us>
+        <log-in class="page" ?active="${this._page === 'log-in'}"></log-in>
         <my-view404 class="page" ?active="${this._page === 'view404'}"></my-view404>
       </main>
 

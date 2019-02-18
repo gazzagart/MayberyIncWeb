@@ -9,8 +9,17 @@ import './snack-bar.js';
 // This element is connected to the Redux store.
 import { store } from '../store.js';
 
+// These are the shared styles needed by this element.
+import { SharedStyles } from './shared-styles.js';
+
 // TODO: Prevent scripting input (validate for undesired input)
 class MessageEmail extends connect(store)(LitElement) {
+
+    static get styles() {
+        return [
+            SharedStyles
+        ];
+    }
 
     static get properties() {
         return {
